@@ -1,4 +1,17 @@
-<?php require "check_login.php"; ?>
+<?php
+	session_start();
+	if($_SESSION['user_id'] == "")
+	{
+		echo "Please Login!";
+		exit();
+	}
+
+	if($_SESSION['status'] != "admin")
+	{
+		echo "This page for Admin only!";
+		exit();
+	}	
+?>
 <!DOCTYPE html>
 <html>
 <?php
@@ -14,9 +27,7 @@ include('configdb.php');
 
 <body>
   <?php
-  // if ($_SESSION['user_id'] == "") {
-  //   echo "<script>window.location = './admin_login.php';</script>";  
-  // }
+  
   $query = "SELECT * FROM answers order by id desc";
   $result = mysqli_query($conn, $query);
   ?>
@@ -106,11 +117,6 @@ include('configdb.php');
 </body>
 
 </html>
-
-
-
-
-
 
 <script type="text/javascript">
   function exportExcel() {
