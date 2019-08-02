@@ -1,16 +1,18 @@
 <?php
-	session_start();
-	if($_SESSION['user_id'] == "")
-	{
-		echo "Please Login!";
-		exit();
-	}
+session_start();
+if ($_SESSION['user_id'] == "") {
+  echo "<script type=\"text/javascript\">";
+  echo "alert(\"Please Login!\");";
+  echo "window.history.back();";
+  echo "</script>";
 
-	if($_SESSION['status'] != "admin")
-	{
-		echo "This page for Admin only!";
-		exit();
-	}	
+  exit();
+}
+
+if ($_SESSION['status'] != "admin") {
+  echo "This page for Admin only!";
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +29,7 @@ include('configdb.php');
 
 <body>
   <?php
-  
+
   $query = "SELECT * FROM answers order by id desc";
   $result = mysqli_query($conn, $query);
   ?>
@@ -68,7 +70,7 @@ include('configdb.php');
         echo "<td>" . $row["q4"] .  "</td> ";
         echo "<td>" . $row["q5"] .  "</td> ";
         echo "<td>" . $row["q6"] .  "</td> ";
-        echo "<td>" . $row["q7"] .  "</td> ";  
+        echo "<td>" . $row["q7"] .  "</td> ";
         echo "<td>" . $row["q7_detail"] .  "</td> ";
         echo "<td>" . $row["q8"] .  "</td> ";
         echo "<td>" . $row["q9_email"] .  "</td> ";
@@ -117,6 +119,7 @@ include('configdb.php');
 </body>
 
 </html>
+
 
 <script type="text/javascript">
   function exportExcel() {
