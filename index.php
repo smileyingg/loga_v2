@@ -11,7 +11,7 @@
   <?php include 'header.php'; ?>
   <div class="container-fluid">
     <div class="col s12">
-      <h4 style="text-align:center;">ร่วมทำแบบสำรวจเพียง 3 นาที ลุ้นเข้าร่วมงานสัมมนาฟรี!</h4>
+      <h4 style="text-align:center;">ร่วมทำแบบสำรวจเพียง 3 นาที ลุ้นรับของที่ระลึก</h4>
       <h4 style="text-align:center;">สัมมนาเพื่อเพิ่มยอดขายร้านทำเล็บ เพื่อเจ้าขายกิจการ และช่างทำเล็บ</h4><br />
       <h5 style="margin-left:20px;">โปรดเลือกเพียงคำตอบที่ตรงกับสภาพกิจการท่านมากที่สุด เพียงคำตอบเดียว</h5>
       <div class="card">
@@ -307,7 +307,7 @@
       document.getElementById('txt_area_q7_4').value = "";
       // document.getElementById('txt_area_q7_4').disabled = true;
       // document.getElementById('txt_area_q7_4').value =" ";
-      
+
     }
     $("#form_survey").on("submit", function(e) {
 
